@@ -97,6 +97,7 @@ cached. If a caching directory is specified and it does not exist it will be cre
     a_voice = opts.voice
     a_format = opts.format
     a_cachedir = opts.cache
+    a_engine = opts.engine
 
 # Make sure there is no trailing '/' in the cache directory name.
 # This also prevents the director from being place in the root.
@@ -172,7 +173,7 @@ cached. If a caching directory is specified and it does not exist it will be cre
 # Create the Polly Object and call Polly to do the conversion
 #
         polly = boto3.client('polly', region_name=a_region, aws_access_key_id=a_aws_access_key_id, aws_secret_access_key=a_aws_secret_access_key)
-        response = polly.synthesize_speech(OutputFormat=a_format, Text=text, VoiceId=a_voice, TextType=a_texttype)
+        response = polly.synthesize_speech(OutputFormat=a_format, Text=text, VoiceId=a_voice, TextType=a_texttype, Engine=a_engine)
 #
 # Now if there is a cache then put the file in the cache for later use
 #

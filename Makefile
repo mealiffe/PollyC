@@ -25,7 +25,7 @@ cachedir=PollyCache
 
 # default is to show usage
 usage:
-	@echo "usage: sudo make install-pollyc keyid=your_keyid accesskey=your_secret [ region=your-region-x ] [ voice=Voice ]"
+	@echo "usage: sudo make install-pollyc keyid=your_keyid accesskey=your_secret [ region=your-region-x ] [ voice=Voice ] [engine=Engine]"
 
 # install PollyC source files and the modified speak.sh and speak_to_file.sh
 install-pollyc: install-boto3 install-mpg123 install-avconv install-flite install-pico install-scripts
@@ -39,6 +39,7 @@ install-keys: superuser
 	${file >>${keyfile},accesskey="${accesskey}"}
 	${file >>${keyfile},region="${region}"}
 	${file >>${keyfile},voice="${voice}"}
+	${file >>${keyfile},engine=${engine}"}
 	${file >>${keyfile},cachedir="${cachedir}"}
 	chmod 600 ${keyfile}
 

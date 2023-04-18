@@ -25,7 +25,7 @@ mp3file="$tmpdir/$myname$$.mp3"
 which python3 >/dev/null && pytype=py3 || pytype=py
 
 # generate mp3 file
-$mydir/PollyC.$pytype --ofile "$mp3file" --text "$text" --cache "$mydir/$cachedir" --voiceid "$voice" --keyid "$keyid" --accesskey "$accesskey" --region "$region"
+$mydir/PollyC.$pytype --ofile "$mp3file" --text "$text" --cache "$mydir/$cachedir" --voiceid "$voice" --keyid "$keyid" --accesskey "$accesskey" --region "$region" --engine "$engine"
 
 if test -f "$mp3file"
 then

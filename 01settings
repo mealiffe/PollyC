@@ -3,10 +3,11 @@
 # AWS keyid, accesskey & region
 keyid=your_keyid
 accesskey=your_accesskey
-region=us-west-1
+region=us-west-2
 
 # voice to use
-voice=Joanna
+voice=Stephen
+engine=neural
 
 # default installpoint (yuck)
 installpoint=/usr/local
