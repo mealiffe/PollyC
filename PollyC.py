@@ -79,6 +79,7 @@ cached. If a caching directory is specified and it does not exist it will be cre
     parser.add_option("-v", "--voiceid", type="string", help="Voice to use", dest="voice", default="Joanna")
     parser.add_option("-f", "--format", type="string", help="Output Audio Format", dest="format", default="mp3")
     parser.add_option("-r", "--region", type="string", help="Region, defaults to us-west-1", dest="region", default="us-west-1")
+    parser.add_option("-e", "--engine", type="string", help="Engine, defaults to standard", dest="engine", default="standard")
 
     (opts, args) = parser.parse_args()
     # Making sure all mandatory options appeared.
@@ -119,10 +120,15 @@ cached. If a caching directory is specified and it does not exist it will be cre
             # otherwise strip metatag from front of text
             text = text[len(mtag):]
 
-            # process metatag '<voice-id="voice_name">
+            # process metatag '<voice-id="voice_name">'
             m = re.search('<voice-id="(.*?)">', mtag)
             if m:
                 a_voice = m.group(1)
+
+            # process metatag '<voice-engine="engine_name">'
+            m = re.search('<voice-engine="(.*?)">', mtag)
+            if m:
+                a_engine = m.group(1)
 
             # process metatag '<no-cache>'
             elif mtag == '<no-cache>':
