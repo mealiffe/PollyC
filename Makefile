@@ -39,7 +39,7 @@ install-keys: superuser
 	${file >>${keyfile},accesskey="${accesskey}"}
 	${file >>${keyfile},region="${region}"}
 	${file >>${keyfile},voice="${voice}"}
-	${file >>${keyfile},engine=${engine}"}
+	${file >>${keyfile},engine="${engine}"}
 	${file >>${keyfile},cachedir="${cachedir}"}
 	chmod 600 ${keyfile}
 

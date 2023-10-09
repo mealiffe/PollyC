@@ -6,7 +6,7 @@ accesskey=your_accesskey
 region=us-west-2
 
 # voice to use
-voice=Stephen
+voice=Matthew
 engine=neural
 
 # default installpoint (yuck)
